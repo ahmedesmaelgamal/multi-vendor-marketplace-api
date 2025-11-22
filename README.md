@@ -1,291 +1,146 @@
-# Project Name
+# Maxim Sea Food - Food Delivery Backend
 
-> A brief, compelling description of what this project does and who it's for.
+> Production-ready food delivery platform backend with WordPress integration and custom APIs for mobile applications.
 
 [![Laravel](https://img.shields.io/badge/Laravel-10.x-red.svg)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.1+-blue.svg)](https://php.net)
-[![License](https://img.shields.io/badge/License-Proprietary-yellow.svg)]()
+[![WordPress](https://img.shields.io/badge/WordPress-Integration-blue.svg)](https://wordpress.org)
 
-## 📋 Table of Contents
+## 📋 About
 
-- [About](#about)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Installation](#installation)
-- [API Documentation](#api-documentation)
-- [Database Schema](#database-schema)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [Contact](#contact)
+Backend system for Maxim Sea Food mobile application, providing RESTful APIs for menu management, order processing, and delivery tracking. The system integrates with an existing WordPress website while serving native mobile applications.
 
-## 🎯 About
+**Project Type:** Food Delivery Backend API  
+**Industry:** Food & Beverage  
+**Platform:** iOS Mobile Application  
+**Role:** Backend Developer
 
-Provide a detailed description of the project, its purpose, and the problem it solves. Mention the target users and key use cases.
-
-**Project Type:** [Mobile App Backend / Web Platform / API Service]  
-**Industry:** [Legal Tech / Food Delivery / Real Estate / Logistics]  
-**Duration:** [Month Year - Month Year]  
-**Role:** [Lead Backend Developer / Core Backend Developer]
+**App Store:** [Download on App Store](https://apps.apple.com/id/app/maxim-sea-food/id6754839815)
 
 ## ✨ Features
 
-### Core Functionality
-- 🔐 **Authentication & Authorization** - JWT-based authentication with role-based access control
-- 📱 **RESTful API** - Comprehensive API endpoints for mobile and web applications
-- 💾 **Database Management** - Optimized MySQL schema with proper indexing
-- 🔔 **Real-time Notifications** - Push notifications for critical events
-- 💰 **Payment Integration** - Multiple payment gateway support
+### Core Features
+- 📱 Production-ready RESTful APIs for mobile app
+- 🍽️ Menu management (categories, items, pricing, availability)
+- 📦 Complete order processing workflow
+- 🚚 Delivery tracking and management
+- 🔔 Status notifications throughout order lifecycle
 
-### Advanced Features
-- 📊 **Admin Dashboard** - Comprehensive management interface with real-time analytics
-- 💬 **Real-time Chat** - In-app messaging system between users
-- 🗺️ **Geolocation Services** - Location tracking and proximity features
-- 📄 **Document Management** - Secure file upload and storage
-- 🔍 **Advanced Search** - Filtering and search capabilities with multiple criteria
+### WordPress Integration
+- 🔄 Custom Laravel backend integrated with existing WordPress website
+- 🌐 Seamless data synchronization between platforms
+- 📝 Custom API endpoints for mobile app consumption
 
-### Business Logic
-- [Add specific business features unique to your project]
-- [e.g., Lawyer-client matching algorithm]
-- [e.g., Multi-vendor bidding system]
-- [e.g., Contract lifecycle management]
+### Admin Dashboard
+- 📊 Real-time order monitoring using DataTables library
+- 📈 Comprehensive reporting and analytics
+- 🎯 Order management interface
+
+### Security & Performance
+- 🛡️ Input validation and request sanitization
+- ⚡ Rate limiting for API protection
+- 🔒 JWT authentication and hardened access controls
+- 🚀 Optimized database queries for high-volume concurrent orders during peak hours
 
 ## 🛠️ Tech Stack
 
-### Backend
-- **Framework:** Laravel 10.x
-- **Language:** PHP 8.1+
-- **Database:** MySQL 8.0
-- **Caching:** Redis
-- **Queue:** Laravel Queue with Redis driver
-
-### Third-Party Integrations
-- **Payment Gateways:** [List specific gateways]
-- **SMS/OTP:** [Provider name]
-- **Cloud Storage:** [AWS S3 / Local Storage]
-- **Maps:** Google Maps API
-- **Other APIs:** [List other integrations]
-
-### Development Tools
-- **Version Control:** Git
-- **API Testing:** Postman
-- **IDE:** PhpStorm / VS Code
-- **Server:** cPanel / AWS / DigitalOcean
-
-## 🏗️ Architecture
-
-### Design Patterns
-- Repository Pattern for data abstraction
-- Service Layer for business logic
-- Observer Pattern for event handling
-- Factory Pattern for object creation
-
-### Project Structure
-```
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   ├── Middleware/
-│   │   └── Requests/
-│   ├── Models/
-│   ├── Services/
-│   ├── Repositories/
-│   └── Events/
-├── database/
-│   ├── migrations/
-│   └── seeders/
-├── routes/
-│   ├── api.php
-│   └── web.php
-└── config/
-```
+- **Framework:** Laravel
+- **Language:** PHP
+- **Database:** MySQL
+- **CMS Integration:** WordPress
+- **Admin UI:** DataTables
+- **Authentication:** JWT
+- **Mobile Platform:** iOS (Native App)
 
 ## 🚀 Installation
 
 ### Prerequisites
 - PHP >= 8.1
 - Composer
-- MySQL >= 8.0
-- Redis (optional, for caching and queues)
-- Node.js & NPM (for asset compilation)
+- MySQL
+- WordPress installation
 
 ### Setup Steps
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/project-name.git
-   cd project-name
+   git clone https://github.com/ahmedesmaelgamal/maxim-seafood-api.git
+   cd maxim-seafood-api
    ```
 
 2. **Install dependencies**
    ```bash
    composer install
-   npm install
    ```
 
-3. **Environment configuration**
+3. **Environment setup**
    ```bash
    cp .env.example .env
    php artisan key:generate
    ```
 
-4. **Configure your `.env` file**
+4. **Configure database**
    ```env
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=your_database
+   DB_DATABASE=maxim_seafood
    DB_USERNAME=your_username
    DB_PASSWORD=your_password
-   
-   REDIS_HOST=127.0.0.1
-   REDIS_PASSWORD=null
-   REDIS_PORT=6379
    ```
 
-5. **Run migrations and seeders**
+5. **Run migrations**
    ```bash
    php artisan migrate
    php artisan db:seed
    ```
 
-6. **Generate storage link**
-   ```bash
-   php artisan storage:link
-   ```
-
-7. **Start the development server**
+6. **Start server**
    ```bash
    php artisan serve
    ```
 
-8. **Run queue worker (in a separate terminal)**
-   ```bash
-   php artisan queue:work
-   ```
-
 ## 📚 API Documentation
 
-### Base URL
-```
-Development: http://localhost:8000/api
-Production: https://api.example.com/api
-```
-
 ### Authentication
-All API requests require authentication using Bearer token:
-```
-Authorization: Bearer {your-token}
-```
-
-### Key Endpoints
-
-#### Authentication
 ```http
-POST /api/auth/register
 POST /api/auth/login
-POST /api/auth/logout
-POST /api/auth/refresh
+POST /api/auth/register
+GET  /api/auth/profile
 ```
 
-#### User Management
+### Menu Management
 ```http
-GET    /api/users
-GET    /api/users/{id}
-PUT    /api/users/{id}
-DELETE /api/users/{id}
+GET    /api/menu/categories
+GET    /api/menu/items
+GET    /api/menu/items/{id}
+POST   /api/admin/menu/items
+PUT    /api/admin/menu/items/{id}
+DELETE /api/admin/menu/items/{id}
 ```
 
-#### [Resource Name]
+### Order Processing
 ```http
-GET    /api/resource
-POST   /api/resource
-GET    /api/resource/{id}
-PUT    /api/resource/{id}
-DELETE /api/resource/{id}
+POST /api/orders
+GET  /api/orders
+GET  /api/orders/{id}
+PUT  /api/orders/{id}/status
 ```
 
-### Response Format
-```json
-{
-  "success": true,
-  "message": "Operation successful",
-  "data": {
-    // Response data
-  }
-}
+### Delivery Management
+```http
+GET  /api/deliveries
+POST /api/deliveries/{id}/assign
+PUT  /api/deliveries/{id}/complete
 ```
-
-### Error Handling
-```json
-{
-  "success": false,
-  "message": "Error description",
-  "errors": {
-    "field": ["Validation error message"]
-  }
-}
-```
-
-## 🗄️ Database Schema
-
-### Key Tables
-
-#### Users Table
-```sql
-- id
-- name
-- email
-- phone
-- role
-- status
-- created_at
-- updated_at
-```
-
-#### [Other Important Tables]
-List your main database tables and their relationships
-
-### Relationships
-- Users have many [Resources]
-- [Resource A] belongs to [Resource B]
-- [Resource C] has many through [Resource D]
-
-## 📸 Screenshots
-
-<!-- Add screenshots of your admin dashboard, API responses, or key features -->
-
-### Admin Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-### Mobile App Integration
-![Mobile](screenshots/mobile.png)
-
-## 🤝 Contributing
-
-This is a proprietary project developed for [Company Name]. The code is provided for portfolio purposes only.
-
-### Code Style
-- Follow PSR-12 coding standards
-- Use meaningful variable and function names
-- Write clear comments for complex logic
-- Keep functions small and focused
 
 ## 📝 License
 
-This project is proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
-
-© 2024-2025 [Your Name / Company Name]. All rights reserved.
+Proprietary project - Portfolio demonstration purposes only.
 
 ## 👤 Contact
 
 **Ahmed Ismail Gamal**
 
-- 📧 Email: ahmedesmaelgamal@gmail.com
-- 💼 LinkedIn: [ahmed-esmael-gamal-9b4179204](https://linkedin.com/in/ahmed-esmael-gamal-9b4179204)
-- 🐙 GitHub: [@ahmedesmaelgamal](https://github.com/ahmedesmaelgamal)
-- 📱 Phone: +20 112 601 5027
-
----
-
-**Note:** This repository contains selected portions of the original project for portfolio demonstration purposes. Sensitive information, API keys, and proprietary business logic have been removed or anonymized.
+- 📧 ahmedesmaelgamal@gmail.com
+- 💼 [LinkedIn](https://linkedin.com/in/ahmed-esmael-gamal-9b4179204)
+- 🐙 [@ahmedesmaelgamal](https://github.com/ahmedesmaelgamal)
