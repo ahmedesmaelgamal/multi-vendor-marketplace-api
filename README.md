@@ -1,146 +1,50 @@
-# Maxim Sea Food - Food Delivery Backend
+# Well7 - Multi-Sided Service Marketplace
 
-> Production-ready food delivery platform backend with WordPress integration and custom APIs for mobile applications.
+> Unified backend serving three interconnected mobile apps for customers, providers, and delivery drivers.
 
-[![Laravel](https://img.shields.io/badge/Laravel-10.x-red.svg)](https://laravel.com)
-[![PHP](https://img.shields.io/badge/PHP-8.1+-blue.svg)](https://php.net)
-[![WordPress](https://img.shields.io/badge/WordPress-Integration-blue.svg)](https://wordpress.org)
+**Google Play:** [View on Play Store](https://play.google.com/store/apps/details?id=com.topbusiness.well_seven_new)
 
-## 📋 About
+## About
 
-Backend system for Maxim Sea Food mobile application, providing RESTful APIs for menu management, order processing, and delivery tracking. The system integrates with an existing WordPress website while serving native mobile applications.
+This repository contains selected code samples from the Well7 platform, developed during my work at TopBusiness. The project involved architecting a unified backend serving three separate mobile applications.
 
-**Project Type:** Food Delivery Backend API  
-**Industry:** Food & Beverage  
-**Platform:** iOS Mobile Application  
-**Role:** Backend Developer
+## Project Overview
 
-**App Store:** [Download on App Store](https://apps.apple.com/id/app/maxim-sea-food/id6754839815)
+The system consists of three interconnected apps:
+- **Customer App:** Create product requests and receive quotes
+- **Provider App:** Manage products and submit competitive offers
+- **Delivery App:** Accept and fulfill delivery orders
 
-## ✨ Features
+## How It Works
 
-### Core Features
-- 📱 Production-ready RESTful APIs for mobile app
-- 🍽️ Menu management (categories, items, pricing, availability)
-- 📦 Complete order processing workflow
-- 🚚 Delivery tracking and management
-- 🔔 Status notifications throughout order lifecycle
+1. Customer creates a request for specific products
+2. Request appears to all providers who have those products
+3. Multiple providers submit competitive quotes/offers
+4. Customer reviews offers and accepts one
+5. Order moves to delivery workflow
+6. Delivery driver accepts and completes the order
 
-### WordPress Integration
-- 🔄 Custom Laravel backend integrated with existing WordPress website
-- 🌐 Seamless data synchronization between platforms
-- 📝 Custom API endpoints for mobile app consumption
+## Key Features
 
-### Admin Dashboard
-- 📊 Real-time order monitoring using DataTables library
-- 📈 Comprehensive reporting and analytics
-- 🎯 Order management interface
+- Dynamic quote-based ordering system
+- Real-time order management with multi-stage status tracking
+- Product management (CRUD, pricing, inventory) for providers
+- Delivery driver assignment and tracking
+- Notifications for all parties at each order stage
+- Optimized concurrent operations across multiple user types
 
-### Security & Performance
-- 🛡️ Input validation and request sanitization
-- ⚡ Rate limiting for API protection
-- 🔒 JWT authentication and hardened access controls
-- 🚀 Optimized database queries for high-volume concurrent orders during peak hours
-
-## 🛠️ Tech Stack
+## Technologies Used
 
 - **Framework:** Laravel
-- **Language:** PHP
 - **Database:** MySQL
-- **CMS Integration:** WordPress
-- **Admin UI:** DataTables
-- **Authentication:** JWT
-- **Mobile Platform:** iOS (Native App)
+- **Architecture:** Multi-app unified backend
 
-## 🚀 Installation
+---
 
-### Prerequisites
-- PHP >= 8.1
-- Composer
-- MySQL
-- WordPress installation
+**Note:** This repository contains only code samples for portfolio purposes. Full source code is proprietary to the company.
 
-### Setup Steps
+## Contact
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ahmedesmaelgamal/maxim-seafood-api.git
-   cd maxim-seafood-api
-   ```
-
-2. **Install dependencies**
-   ```bash
-   composer install
-   ```
-
-3. **Environment setup**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-
-4. **Configure database**
-   ```env
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_DATABASE=maxim_seafood
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   ```
-
-5. **Run migrations**
-   ```bash
-   php artisan migrate
-   php artisan db:seed
-   ```
-
-6. **Start server**
-   ```bash
-   php artisan serve
-   ```
-
-## 📚 API Documentation
-
-### Authentication
-```http
-POST /api/auth/login
-POST /api/auth/register
-GET  /api/auth/profile
-```
-
-### Menu Management
-```http
-GET    /api/menu/categories
-GET    /api/menu/items
-GET    /api/menu/items/{id}
-POST   /api/admin/menu/items
-PUT    /api/admin/menu/items/{id}
-DELETE /api/admin/menu/items/{id}
-```
-
-### Order Processing
-```http
-POST /api/orders
-GET  /api/orders
-GET  /api/orders/{id}
-PUT  /api/orders/{id}/status
-```
-
-### Delivery Management
-```http
-GET  /api/deliveries
-POST /api/deliveries/{id}/assign
-PUT  /api/deliveries/{id}/complete
-```
-
-## 📝 License
-
-Proprietary project - Portfolio demonstration purposes only.
-
-## 👤 Contact
-
-**Ahmed Ismail Gamal**
-
-- 📧 ahmedesmaelgamal@gmail.com
-- 💼 [LinkedIn](https://linkedin.com/in/ahmed-esmael-gamal-9b4179204)
-- 🐙 [@ahmedesmaelgamal](https://github.com/ahmedesmaelgamal)
+**Ahmed Ismail Gamal**  
+📧 ahmedesmaelgamal@gmail.com  
+💼 [LinkedIn](https://linkedin.com/in/ahmed-esmael-gamal-9b4179204)
